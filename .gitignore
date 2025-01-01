@@ -1,0 +1,44 @@
+# Java files
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# Maven / Gradle build directories
+/target/
+/build/
+
+# IntelliJ IDEA
+.idea/
+/*.iml
+
+# Eclipse
+/.project
+/.classpath
+/.settings/
+
+# NetBeans
+/nbproject/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Windows Installer files
+*.cab
+*.msi
+
+# JDK/JRE specific files
+/.jdk/
+/.jre/
+
+# Gradle
+.gradle/
