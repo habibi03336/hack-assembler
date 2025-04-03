@@ -1,4 +1,4 @@
-package org.example;
+package org.example.assembler;
 
 public class CInstructionCode extends Code {
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.assembler;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.net.URL;
 
 
-public class MainTest {
+public class AssemblerMainTest {
 
     @Test
     public void pongCompareTest() throws IOException {
-        URL pongAsm = MainTest.class.getClassLoader().getResource("MainTestPongL.asm");
-        Main.main(new String[]{pongAsm.getPath()});
+        URL pongAsm = AssemblerMainTest.class.getClassLoader().getResource("MainTestPongL.asm");
+        AssemblerMain.run(pongAsm.getPath());
 
-        URL pongHackAssembled = MainTest.class.getClassLoader().getResource("MainTestPongL.hack");
-        URL pongHackExpected = MainTest.class.getClassLoader().getResource("MainTestPongLExpected.hack");
+        URL pongHackAssembled = AssemblerMainTest.class.getClassLoader().getResource("MainTestPongL.hack");
+        URL pongHackExpected = AssemblerMainTest.class.getClassLoader().getResource("MainTestPongLExpected.hack");
 
         try (
                 BufferedReader assembled = new BufferedReader(new FileReader(pongHackAssembled.getPath()));
@@ -32,7 +32,7 @@ public class MainTest {
                 expectedLine = expected.readLine();
             }
             // assert length of the files is same
-            assertEquals(true, assembledLine == null && expectedLine == null);
+            assertTrue(assembledLine == null && expectedLine == null);
         }
     }
 }
