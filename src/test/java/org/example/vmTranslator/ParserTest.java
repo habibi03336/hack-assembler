@@ -20,5 +20,20 @@ class ParserTest {
         assertEquals(1, parser.arg2());
     }
 
+    @Test
+    public void parsePopCommand(){
+        //given
+        Parser parser = new Parser("");
+        String commandString = "pop local 1";
+
+        //execute
+        parser.doAdvance(commandString);
+
+        //then
+        assertEquals(CommandType.C_POP, parser.commandType());
+        assertEquals("local", parser.arg1());
+        assertEquals(1, parser.arg2());
+    }
+
 
 }
