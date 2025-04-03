@@ -14,7 +14,8 @@ public class CodeWriter {
     public void writePushPop(String command, String segment, int index){}
 
     private Map<String, String> segmentMapping = Map.of(
-            "local", "LCL"
+            "local", "LCL",
+            "argument", "ARG"
     );
     String[] translatePop(String segment, int index){
         return new String[]{
