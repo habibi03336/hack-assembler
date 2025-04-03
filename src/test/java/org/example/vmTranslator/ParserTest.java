@@ -35,5 +35,21 @@ class ParserTest {
         assertEquals(1, parser.arg2());
     }
 
+    @Test
+    public void parseAdd(){
+        //given
+        Parser parser = new Parser("");
+        String[] arithmeticCommands = new String[]{"add", "sub", "neg", "eq", "gt", "lt", "and", "or", "not"};
+
+        for(String commandString: arithmeticCommands){
+            //execute
+            parser.doAdvance(commandString);
+
+            //then
+            assertEquals(CommandType.C_ARITHMETIC, parser.commandType());
+            assertEquals(commandString, parser.arg1());
+        }
+    }
+
 
 }
